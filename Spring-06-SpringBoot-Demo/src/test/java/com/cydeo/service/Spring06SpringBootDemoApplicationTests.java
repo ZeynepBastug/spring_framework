@@ -1,4 +1,4 @@
-package com.example.spring06springbootdemo;
+package com.cydeo.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
