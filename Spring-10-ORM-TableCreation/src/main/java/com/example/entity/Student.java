@@ -16,7 +16,7 @@ public class Student {
     private String lastName;
     private String email;
 
-    @Transient // -> makes this variable into table as column
+    @Transient // -> makes this variable no available in the table as column
     private String city;
 
     @Column(columnDefinition = "DATE")

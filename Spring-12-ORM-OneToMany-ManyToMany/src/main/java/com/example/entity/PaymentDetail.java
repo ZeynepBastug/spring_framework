@@ -21,7 +21,7 @@ public class PaymentDetail extends BaseEntity{
     private LocalDate payout_date;
 
     @OneToOne(mappedBy = "paymentDetail", cascade = CascadeType.ALL)
-    @JoinColumn(name="payment_id")
+//    @JoinColumn(name="payment_id")
     private Payment payment;
 
 

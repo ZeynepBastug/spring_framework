@@ -15,10 +15,20 @@ import java.time.LocalDate;
 public class Payment extends BaseEntity{
 
     private BigDecimal amount;
+
+    @Column(columnDefinition = "DATE")
     private LocalDate createdDate;
+
     private Status paymentStatus;
+
     @OneToOne(cascade = CascadeType.ALL)
     private PaymentDetail paymentDetail;
+
+    @ManyToOne
+    private Merchant merchant;
+
+    @ManyToOne
+    private Customer customer;
 
     public Payment(BigDecimal amount, LocalDate createdDate, Status paymentStatus) {
         this.amount = amount;
