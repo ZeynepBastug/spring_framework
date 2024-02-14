@@ -16,4 +16,7 @@ public class Cinema extends BaseEntity {
     @ManyToOne
     private MovieCinema movieCinema;
 
+    @ManyToOne
+    private Location location;
+
 }

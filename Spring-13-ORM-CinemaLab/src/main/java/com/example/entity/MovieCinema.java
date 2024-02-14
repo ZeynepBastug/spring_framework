@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -12,11 +13,14 @@ import java.util.List;
 @Data
 public class MovieCinema extends BaseEntity{
 
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.LAZY)
     private Movie movie;
 
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.LAZY)
     private Cinema cinema;
+
+    @Column(columnDefinition = "TIMESTAMP")
+    private LocalDateTime dateTime;
 
 
 }
