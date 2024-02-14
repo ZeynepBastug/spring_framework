@@ -11,7 +11,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "movies")
 @Data
 @NoArgsConstructor
 public class Movie extends BaseEntity{
@@ -30,12 +29,10 @@ public class Movie extends BaseEntity{
     private Integer duration;
     private String summary;
 
-    @ManyToOne
-    private MovieCinema movieCinema;
-
     @ManyToMany
-    @JoinTable(name = "movie_genre_rel", joinColumns = @JoinColumn(name = "m_id"),
-    inverseJoinColumns = @JoinColumn (name = "g_id"))
+    @JoinTable(name = "movie_genre_rel",
+            joinColumns = @JoinColumn(name = "movie_id"),
+            inverseJoinColumns = @JoinColumn (name = "genre_id"))
     private List<Genre> genreList;
 
 
