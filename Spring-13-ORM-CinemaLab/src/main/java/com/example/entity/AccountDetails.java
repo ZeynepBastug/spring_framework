@@ -1,22 +1,25 @@
 package com.example.entity;
 
+import com.example.enums.Role;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.math.BigDecimal;
 
 @Entity
 @Data
 @NoArgsConstructor
-public class Location extends BaseEntity{
+public class AccountDetails extends BaseEntity{
 
     private String name;
-    private BigDecimal latitude;
-    private BigDecimal longtitude;
+    private String address;
     private String country;
     private String city;
     private String state;
+    private Integer age;
     private String postalCode;
-    private String address;
+    private Role role;
+
+    @OneToOne (mappedBy = "accountDetails")
+    private UserAccount userAccount;
 }
