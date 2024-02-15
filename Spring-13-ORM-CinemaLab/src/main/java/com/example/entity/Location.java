@@ -12,11 +12,11 @@ import java.math.BigDecimal;
 public class Location extends BaseEntity{
 
     private String name;
+    private String address;
+    private String postalCode;
+    private String country;
+    private String state;
+    private String city;
     private BigDecimal latitude;
     private BigDecimal longtitude;
-    private String country;
-    private String city;
-    private String state;
-    private String postalCode;
-    private String address;
 }

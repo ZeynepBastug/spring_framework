@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "movieCinemas")
 @NoArgsConstructor
 @Data
 public class MovieCinema extends BaseEntity{

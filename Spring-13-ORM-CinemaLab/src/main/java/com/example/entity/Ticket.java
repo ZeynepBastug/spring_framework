@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "tickets")
 @Data
 @NoArgsConstructor
 public class Ticket extends BaseEntity{

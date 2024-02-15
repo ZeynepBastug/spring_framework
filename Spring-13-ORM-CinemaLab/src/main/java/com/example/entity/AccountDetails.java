@@ -2,6 +2,8 @@ package com.example.entity;
 
 import com.example.enums.Role;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +20,7 @@ public class AccountDetails extends BaseEntity{
     private String state;
     private Integer age;
     private String postalCode;
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     @OneToOne (mappedBy = "accountDetails")
