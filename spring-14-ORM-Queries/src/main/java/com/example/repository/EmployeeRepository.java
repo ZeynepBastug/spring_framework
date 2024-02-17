@@ -2,6 +2,7 @@ package com.example.repository;
 
 import com.example.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -37,6 +38,19 @@ public interface EmployeeRepository extends JpaRepository<Employee,Long> {
 
     // Display all employees that do not have email address
     List<Employee> findByEmailIsNull();
+
+    @Query (" SELECT e FROM Employee e WHERE e.email = 'sdubber7@t-online.de'")
+    List<Employee> getEmployeeDetail();
+
+    @Query ("SELECT e.salary FROM Employee e WHERE e.email = 'sdubber7@t-online.de' ")
+    List<Employee> getEmployeSalary();
+
+    @Query ("SELECT e FROM Employee e WHERE e.email = ?1")
+    List<Employee> getEmployeeDetail(String email);
+
+    @Query ("SELECT e FROM Employee e WHERE e.email=?1 AND e.salary=?2")
+    List<Employee> getEmployeeDetail(String email, Integer salary);
+
 
 
 }
