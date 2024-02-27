@@ -1,5 +1,6 @@
 package com.example.bootstrap;
 
+import com.example.repository.CourseRepository;
 import com.example.repository.DepartmentRepository;
 import com.example.repository.RegionRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -10,10 +11,12 @@ public class DataGenerator  implements CommandLineRunner {
 
     RegionRepository regionRepository;
     DepartmentRepository departmentRepository;
+    CourseRepository courseRepository;
 
-    public DataGenerator(RegionRepository regionRepository, DepartmentRepository departmentRepository) {
+    public DataGenerator(RegionRepository regionRepository, DepartmentRepository departmentRepository, CourseRepository courseRepository) {
         this.regionRepository = regionRepository;
         this.departmentRepository = departmentRepository;
+        this.courseRepository = courseRepository;
     }
 
     @Override
